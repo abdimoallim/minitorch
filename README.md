@@ -4,13 +4,13 @@ A minimal PyTorch-like deep learning library implemented in Python with NumPy an
 
 ### Features
 
-- **Automatic Differentiation**: Full autograd engine with gradient computation
-- **Tensor Operations**: Element-wise ops, matrix multiplication, reductions, reshaping
-- **Neural Network Modules**: Linear layers, Conv2D, pooling, batch norm, dropout
-- **Activation Functions**: ReLU, Sigmoid, Tanh, Softmax
-- **Loss Functions**: MSE, Cross Entropy, Binary Cross Entropy, L1 Loss
-- **Optimizers**: SGD, Adam, RMSprop, Adagrad
-- **CUDA Acceleration**: Custom CUDA kernels for GPU operations (optional)
+- Autograd engine with gradient computation (incomplete)
+- Element-wise ops, matrix multiplication, reductions, reshaping
+- Linear layers, Conv2D, pooling, batch norm, dropout
+- Activation functions (ReLU, Sigmoid, Tanh, Softmax)
+- Loss functions (MSE, Cross Entropy, Binary Cross Entropy, L1 Loss)
+- Optimizers (SGD, Adam, RMSprop, Adagrad)
+- CUDA kernels for GPU operations (optional)
 
 ### Installation
 
@@ -207,10 +207,10 @@ Custom CUDA kernels are provided for:
 
 Tensors can exist on CPU (NumPy) or GPU (CuPy). The library handles data movement between devices transparently.
 
-## License
+### License
 
 Apache v2.0 License
 
-## Contributing
+### Contributing
 
 This is an educational project demonstrating how PyTorch works internally. Feel free to extend it with additional features!
