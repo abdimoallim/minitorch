@@ -1,8 +1,8 @@
-# MiniTorch
+### minitorch
 
 A minimal PyTorch-like deep learning library implemented in Python with NumPy and CUDA support.
 
-## Features
+### Features
 
 - **Automatic Differentiation**: Full autograd engine with gradient computation
 - **Tensor Operations**: Element-wise ops, matrix multiplication, reductions, reshaping
@@ -12,7 +12,7 @@ A minimal PyTorch-like deep learning library implemented in Python with NumPy an
 - **Optimizers**: SGD, Adam, RMSprop, Adagrad
 - **CUDA Acceleration**: Custom CUDA kernels for GPU operations (optional)
 
-## Installation
+### Installation
 
 ```bash
 pip install numpy
@@ -24,9 +24,9 @@ For CUDA support:
 pip install cupy-cuda11x
 ```
 
-## Quick Start
+### Quick Start
 
-### Basic Tensor Operations
+#### Basic Tensor Operations
 
 ```python
 import minitorch as mt
@@ -41,7 +41,7 @@ loss.backward()
 print(x.grad)
 ```
 
-### Building a Neural Network
+#### Building a Neural Network
 
 ```python
 import minitorch as mt
@@ -67,7 +67,7 @@ for epoch in range(num_epochs):
   optimizer.step()
 ```
 
-### Convolutional Neural Networks
+#### Convolutional Neural Networks
 
 ```python
 class CNN(nn.Module):
@@ -85,7 +85,7 @@ class CNN(nn.Module):
     return self.fc(x)
 ```
 
-### CUDA Support
+#### CUDA Support
 
 ```python
 x = mt.Tensor([[1, 2], [3, 4]], requires_grad=True, device='cuda')
@@ -104,9 +104,9 @@ model = CNN()
 model.cuda()
 ```
 
-## API Reference
+### API Reference
 
-### Tensor Creation
+#### Tensor Creation
 
 - `mt.Tensor(data, requires_grad=False, device='cpu')`
 - `mt.zeros(*shape)`
@@ -116,7 +116,7 @@ model.cuda()
 - `mt.arange(start, end, step)`
 - `mt.eye(n, m)`
 
-### Tensor Operations
+#### Tensor Operations
 
 - Arithmetic: `+`, `-`, `*`, `/`, `**`
 - Matrix ops: `@` (matmul), `.t()` (transpose)
@@ -125,7 +125,7 @@ model.cuda()
 - Activations: `.relu()`, `.sigmoid()`, `.tanh()`
 - Math: `.exp()`, `.log()`, `.sqrt()`
 
-### Neural Network Layers
+#### Neural Network Layers
 
 - `nn.Linear(in_features, out_features)`
 - `nn.Conv2d(in_channels, out_channels, kernel_size, stride, padding)`
@@ -136,7 +136,7 @@ model.cuda()
 - `nn.BatchNorm2d(num_features)`
 - `nn.Embedding(num_embeddings, embedding_dim)`
 
-### Activation Functions
+#### Activation Functions
 
 - `nn.ReLU()`
 - `nn.Sigmoid()`
@@ -144,21 +144,21 @@ model.cuda()
 - `nn.Softmax(dim)`
 - `nn.LogSoftmax(dim)`
 
-### Loss Functions
+#### Loss Functions
 
 - `nn.MSELoss()`
 - `nn.CrossEntropyLoss()`
 - `nn.BCELoss()`
 - `nn.L1Loss()`
 
-### Optimizers
+#### Optimizers
 
 - `mt.optim.SGD(params, lr, momentum, weight_decay)`
 - `mt.optim.Adam(params, lr, betas, eps, weight_decay)`
 - `mt.optim.RMSprop(params, lr, alpha, eps, weight_decay)`
 - `mt.optim.Adagrad(params, lr, eps, weight_decay)`
 
-## Examples
+### Examples
 
 See the `examples/` directory for complete examples:
 
@@ -167,7 +167,7 @@ See the `examples/` directory for complete examples:
 - `regression.py` - Regression with neural network
 - `cnn.py` - Convolutional neural network
 
-## Architecture
+### Architecture
 
 ```
 minitorch/
@@ -189,13 +189,13 @@ minitorch/
     └── conv.cu
 ```
 
-## Implementation Details
+### Implementation Details
 
-### Autograd Engine
+#### Autograd Engine
 
 MiniTorch implements reverse-mode automatic differentiation using a computational graph. Each operation creates nodes in the graph with saved context for backward pass.
 
-### CUDA Kernels
+#### CUDA Kernels
 
 Custom CUDA kernels are provided for:
 - Matrix multiplication (with shared memory tiling)
@@ -203,13 +203,13 @@ Custom CUDA kernels are provided for:
 - Reduction operations (sum, max, softmax)
 - Convolution operations
 
-### Memory Management
+#### Memory Management
 
 Tensors can exist on CPU (NumPy) or GPU (CuPy). The library handles data movement between devices transparently.
 
 ## License
 
-MIT
+Apache v2.0 License
 
 ## Contributing
 
